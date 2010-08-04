@@ -35,7 +35,7 @@ public:
     struct moo_request {
         Persistent<Function> cb;
         Async *async;
-        int x, y;
+        int result;
     };
 
     static int EIO_Moo(eio_req *req) {
@@ -44,8 +44,8 @@ public:
         //
         printf("%x %x\n", req, req->data);
         moo_request *moo_req = (moo_request *)req->data;
-        moo_req->x = 11;
-        moo_req->y = 4;
+        Async *async = moo_req->async;
+        moo_req->result = async->x * async->y;
         return 0;
     }
 
@@ -56,7 +56,7 @@ public:
         moo_request *moo_req = (moo_request *)req->data;
 
         Local<Value> argv[1];
-        argv[0] = Integer::New(moo_req->x * moo_req->y);
+        argv[0] = Integer::New(moo_req->result);
 
         TryCatch try_catch;
 
