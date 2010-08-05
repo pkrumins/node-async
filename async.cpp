@@ -39,10 +39,6 @@ public:
     };
 
     static int EIO_Moo(eio_req *req) {
-        //
-        // req->data pointer gets messed up!!!
-        //
-        printf("%x %x\n", req, req->data);
         moo_request *moo_req = (moo_request *)req->data;
         Async *async = moo_req->async;
         moo_req->result = async->x * async->y;
