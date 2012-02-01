@@ -1,0 +1,32 @@
+{
+   "name": "async",
+   "version": "1.0.0",
+   "main": "async",
+   "description": "An example C++ module for node.js that multiplies 2 numbers asynchronously",
+   "keywords": [
+       "c++",
+       "async",
+       "example"
+   ],
+   "author": {
+       "name": "Peteris Krumins",
+       "email": "peteris.krumins@gmail.com",
+       "web": "http://www.catonmat.net",
+       "twitter": "pkrumins"
+   }, 
+   "license": "MIT",
+   "repository": {
+       "type": "git",
+       "url": "git@github.com:pkrumins/node-async.git" 
+   }, 
+   "directories": {
+       "tests": "tests"
+   },
+   "engines": {
+       "node": ">=0.2.0"
+   },
+   "scripts": {
+       "install": "node-waf configure build"
+   }
+}
+
