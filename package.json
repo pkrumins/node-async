@@ -1,5 +1,5 @@
 {
-   "name": "async",
+   "name": "cppasync",
    "version": "1.0.0",
    "main": "async",
    "description": "An example C++ module for node.js that multiplies 2 numbers asynchronously",
